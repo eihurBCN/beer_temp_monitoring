@@ -24,10 +24,19 @@ def log_temperature(temp):
 
     conn.close()
 
+def get_temp_sens():
+        tfile = open("/sys/bus/w1/devices/28-00000a091916/w1_slave")
+        text = tfile.read()
+        tfile.close()
+        secondline = text.split("\n")[1]
+        temperaturedata = secondline.split(" ")[9]
+        temperature = float(temperaturedata[2:])
+        temperature = temperature / 1000
+        return float(temperature)
 
 def main():
-    temperature = 22.5
-    log_temperature(temperature)
+    Temp = str(get_temp_sens())
+    log_temperature(Temp)
 
 if __name__ == '__main__':
     main()
