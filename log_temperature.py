@@ -9,7 +9,7 @@ import glob
 
 
 #defines
-dbname = "databases/templog.db"
+dbname = "/home/pi/beer_temp_monitoring/databases/templog.db"
 
 # store the temperature in the database
 def log_temperature(temp):
@@ -37,6 +37,6 @@ def get_temp_sens():
 def main():
     Temp = str(get_temp_sens())
     log_temperature(Temp)
-
+    print(Temp)
 if __name__ == '__main__':
     main()

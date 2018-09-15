@@ -6,7 +6,7 @@ sys.stdout = open('/../../../var/www/html/temperature.html','w')
 
 
 #defines
-dbname = "databases/templog.db"
+dbname = "/home/pi/beer_temp_monitoring/databases/templog.db"
 
 def select_all_tasks():
     """
