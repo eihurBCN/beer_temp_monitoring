@@ -1,10 +1,11 @@
 #!/bin/sh
 
-
+echo Starting Temperature monitoring program
 while true
 do
-    python log_temperature.py
+    python /home/pi/beer_temp_monitoring/log_temperature.py
     sleep 1
-    python html_temp.py
-    sleep 300
+    python /home/pi/beer_temp_monitoring/html_temp.py
+    echo Updated temp
+    sleep 60
 done
