@@ -6,7 +6,7 @@ from sqlite3 import Error
 import os
 import time
 import glob
-
+import datetime
 
 #defines
 dbname = "/home/pi/beer_temp_monitoring/databases/templog.db"
@@ -16,8 +16,9 @@ def log_temperature(temp):
 
     conn=sqlite3.connect(dbname)
     curs=conn.cursor()
-
-    curs.execute("INSERT INTO temp values(datetime('now'), (?))", (temp,))
+    i = datetime.datetime.now()
+    house_time = i.isoformat()	
+    curs.execute("INSERT INTO temp values(?,?)", (house_time,temp))
 
     # commit the changes
     conn.commit()
