@@ -7,5 +7,5 @@ do
     sleep 1
     python /home/pi/beer_temp_monitoring/html_temp.py
     echo Updated temp
-    sleep 60
+    sleep 300
 done
