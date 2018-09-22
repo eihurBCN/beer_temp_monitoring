@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Starting Temperature monitoring program
+echo 	Starting Temperature monitoring program
 while true
 do
     python /home/pi/beer_temp_monitoring/log_temperature.py

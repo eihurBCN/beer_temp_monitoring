@@ -10,6 +10,6 @@ service grafana-server start
 
 while true
 do
-    python3 log_temp_influx.py
-    sleep 60
+    python3 /home/pi/beer_temp_monitoring/log_temp_influx.py
+    sleep 300
 done
